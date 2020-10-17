@@ -1,0 +1,17 @@
+{
+    "name": "python-playground",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "python",
+    "workspaceFolder": "/app",
+    "extensions": [
+        "ms-python.python",
+    ],
+    "settings": {
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.pythonPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": false,
+        "editor.formatOnType": false,
+    }
+}

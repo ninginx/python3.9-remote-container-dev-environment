@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends git gcc build-e
 RUN pip install pylint && pip install black && pip install poetry
 RUN poetry config virtualenvs.create false
 COPY . .
-# RUN poetry install
+RUN poetry install
 
 ENV PORT 8080
 

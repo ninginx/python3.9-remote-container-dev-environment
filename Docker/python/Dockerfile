@@ -4,12 +4,11 @@ FROM python:3.9-slim-buster
 ENV APP_HOME /app
 WORKDIR $APP_HOME
 
-RUN apt-get update && apt-get install -y git
-RUN pip install pylint
-RUN pip install autopep8
-# RUN pip install mypy
+RUN apt-get update && apt-get install -y --no-install-recommends git gcc build-essential
+RUN pip install pylint && pip install black && pip install poetry
+RUN poetry config virtualenvs.create false
 COPY . .
-RUN pip install -r requirements.txt
+# RUN poetry install
 
 ENV PORT 8080
 
